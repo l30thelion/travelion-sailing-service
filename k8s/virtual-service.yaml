@@ -1,0 +1,13 @@
+kind: VirtualService
+apiVersion: networking.istio.io/v1alpha3
+metadata:
+  name: travelion-sailing-service
+spec:
+  hosts:
+    - travelion-sailing-service
+  gateways:
+    - cloud-test-ingress-gateway.istio-system.svc.cluster.local
+  http:
+    - route:
+        - destination:
+            host: travelion-sailing-service
